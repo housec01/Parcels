@@ -15,12 +15,14 @@
             ]};
         var map = new OpenLayers.Map('map');
         var wms = new OpenLayers.Layer.WMS( "USGS Transportation",
-            "http://services.nationalmap.gov/arcgis/services/transportation/MapServer/WMSServer?", {isBaseLayer:true,displayInLayerSwitcher:true,zoomOffset:11,resolutions:[584916.40,1251455.42,712530.96,1343407.46],layers: ['Local Road','State Route', 'US Route','Interstate','labels']} );
+            "http://services.nationalmap.gov/arcgis/services/transportation/MapServer/WMSServer?",
+            {layers: ['Local Road','State Route', 'US Route','Interstate','labels']},
+            {isBaseLayer:true,displayInLayerSwitcher:true,zoomOffset:11,resolutions:[584916.40,1251455.42,712530.96,1343407.46]}
+            );
         var findparcels_wms = new OpenLayers.Layer.WMS( "findparcels1",
             "http://csragis2.myvnc.com/geoserver/wms/parcelsearch1", {layers: 'parcelsearch1:findparcels1', transparent:"true"}, {isBaseLayer:false} );
         map.addLayers([wms, findparcels_wms]);
         map.setCenter(663826.25525,1275798.77307, 12);
       </script>
-
 </body>
 </html>
